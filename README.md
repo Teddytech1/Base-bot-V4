@@ -20,10 +20,6 @@
 
 <br/>
 
-[📦 Installation](#-installation) · [🔐 Session Setup](#-getting-your-session-id) · [⚙️ Configuration](#️-configuration) · [🚀 Deployment](#-deployment) · [🔌 Plugins](#-plugin-system)
-
-<br/>
-
 ---
 
 ### 🌍 Deploy on your favourite platform
