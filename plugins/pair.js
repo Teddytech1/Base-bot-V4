@@ -4,22 +4,22 @@ export default {
     aliases: ['paircode', 'session', 'getsession', 'sessionid'],
     category: 'general',
     description: 'Get session id for MEGA-MD',
-    usage: '.pair 92305395XXXX',
+    usage: '.pair 2547XXXX',
     async handler(sock, message, args, context) {
         const { chatId } = context;
         const forwardInfo = {
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363319098372999@newsletter',
-                newsletterName: 'MEGA MD',
+                newsletterJid: '120363421104812135@newsletter',
+                newsletterName: 'TEDDY-XMD',
                 serverMessageId: -1
             }
         };
         const query = args.join('').trim();
         if (!query) {
             return await sock.sendMessage(chatId, {
-                text: "❌ *Missing Number*\nExample: .pair 92305395XXXX",
+                text: "❌ *Missing Number*\nExample: .pair 2547XXXX",
                 contextInfo: forwardInfo
             }, { quoted: message });
         }
@@ -35,7 +35,7 @@ export default {
             contextInfo: forwardInfo
         }, { quoted: message });
         try {
-            const response = await axios.get(`https://mega-pairing.onrender.com/pair?number=${number}`, {
+            const response = await axios.get(`https://teddy-xmd-pair-mg6d.onrender.com/pair?number=${number}`, {
                 timeout: 60000
             });
             if (response.data && response.data.code) {
@@ -43,7 +43,7 @@ export default {
                 if (pairingCode.includes("Unavailable") || pairingCode.includes("Error")) {
                     throw new Error("Server is busy");
                 }
-                const successText = `✅ *MEGA-MD PAIRING CODE*\n\n` +
+                const successText = `✅ *TEDDY-XMD PAIRING CODE*\n\n` +
                     `Code: *${pairingCode}*\n\n` +
                     `*How to use:*\n` +
                     `1. Open WhatsApp Settings\n` +
